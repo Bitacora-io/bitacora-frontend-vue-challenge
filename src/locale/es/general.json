@@ -1,0 +1,100 @@
+{
+  "signIn": "Ingresar",
+  "signUp": "Crear cuenta",
+  "signUpError": "Algo extraño sucedio, porfavor intenta de nuevo!",
+  "welcome": "Bienvenido!",
+  "forgotPassword": "¿Olvidaste tu Contraseña?",
+  "changePassword": "Cambiar contraseña",
+  "sendEmail": "Enviar correo",
+  "currency": {
+    "style": "currency",
+    "currency": "USD"
+  },
+  "nav": {
+    "panel": "Panel",
+    "createLog": "Crear Apunte",
+    "logs": {
+      "menu": "Registros",
+      "smartView": "Vista Global",
+      "activity": "Actividad"
+    },
+    "stock": {
+      "menu": "Inventario",
+      "smartView": "Vista Global",
+      "activity": "Actividad",
+      "reports": "Reportes"
+    },
+    "personnel": {
+      "menu": "Personal",
+      "smartView": "Vista Global",
+      "activity": "Actividad",
+      "reports": "Reportes"
+    },
+    "notifications": "Notificaciones",
+    "manage": {
+      "staff": "Miembros"
+    },
+    "catalogs": {
+      "menu": " Gestión de Catálogos",
+      "projects": "Proyectos / Categorías",
+      "subcategories": "Sub-Categorías",
+      "items": "Artículos de Inventario",
+      "providers": "Proveedores / Receptores",
+      "tags": "Tags"
+    },
+    "organizations": "Organizaciones"
+  },
+  "inputs": {
+    "email": "Correo Electrónico",
+    "name": "Nombre",
+    "password": "Contraseña"
+  },
+  "validations": {
+    "fieldRequired": "Este campo es requerido",
+    "emailRequired": "Ingresa tu dirección de correo",
+    "emailValid": "Ingresa una dirección de correo valida",
+    "nameRequired": "Ingresa tu nombre",
+    "passwordRequired": "Ingresa tu contraseña",
+    "passwordMinLength": "Tu contraseña debe tener al menos 5 caracteres",
+    "passwordMatch": "Las contraseñas no coinciden"
+  },
+  "goPro": "Añade a compañeros, sube fotos/archivos y activa todas las funciones",
+  "plans": {
+    "free": "Gratuito",
+    "pro": "Pro",
+    "advanced": "Avanzado"
+  },
+  "badges": {
+    "upgradePlan": "Mejorar Plan"
+  },
+  "creationDate": "Fecha de Creación",
+  "edit": "Editar",
+  "delete": "Borrar",
+  "project": "Proyecto / Categoría",
+  "dates": "Fechas",
+  "advancedSearch": "Búsqueda Avanzada",
+  "signatureTypes": {
+    "approved": "Aprobada",
+    "received": "Recibida",
+    "rejected": "Rechazada"
+  },
+  "close": "Cerrar",
+  "cancel": "Cancelar",
+  "confirm": "Confirmar",
+  "apply": "Aplicar",
+  "save": "Guardar",
+  "saving": "Guardando",
+  "editOrganizations": "Editar Organizaciones",
+  "genericError": "Algo ocurrió mal, intenta nuevamente",
+  "selectOptions": "Selecciona Opciones",
+  "examplesButton": "Ejemplos / Guias",
+  "loading": "Cargando",
+  "loadingXlsTitle": "Generando Archivo",
+  "longerLoadingStep1": "Por favor espere, este proceso podria demorar",
+  "longerLoadingStep2": "Procesando { progress } de { total } registros",
+  "addTag": "Agregar Tag",
+  "messages": {
+    "saveSuccess": "Guardado exitosamente",
+    "error": "Algo salió mal, vuelve a intentarlo"
+  }
+}

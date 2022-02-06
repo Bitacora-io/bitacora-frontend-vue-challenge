@@ -1,0 +1,12 @@
+.o-breadcrumb {
+  @apply tw-w-full;
+  @apply tw-border-b;
+  @apply tw-bg-white;
+  @apply tw-p-4;
+  color: $color-gray-variant3;
+
+  .el-breadcrumb__inner.is-link,
+  .el-breadcrumb__inner a {
+    color: $color-gray-variant3;
+  }
+}

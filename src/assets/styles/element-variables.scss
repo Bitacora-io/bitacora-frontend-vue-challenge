@@ -1,0 +1,28 @@
+// TODO keep defining these colors in inuitcss/settings/settings.colors
+@forward 'element-plus/theme-chalk/src/common/var' with (
+  $colors: (
+    'white': #ffffff,
+    'black': #000000,
+    'primary': (
+      'base': #1ab394,
+    ),
+    'success': (
+      'base': #1ab394,
+    ),
+    'warning': (
+      'base': #e6a23c,
+    ),
+    'danger': (
+      'base': #f56c6c,
+    ),
+    'error': (
+      'base': #f56c6c,
+    ),
+    'info': (
+      'base': #909399,
+    ),
+  )
+);
+
+// @import '~element-plus/theme-chalk/src/index';
+@use "element-plus/theme-chalk/src/index" as *;

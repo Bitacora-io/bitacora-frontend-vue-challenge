@@ -1,0 +1,33 @@
+{
+  "title": "Quick Links",
+  "regards": {
+    "hello": "Hello!",
+    "instruction": "Here are quick links to important features you should try."
+  },
+  "information": {
+    "title": "Your Information",
+    "createLog": "Create a Log or Task",
+    "viewInfo": "View your Information",
+    "historicalBackup": "Historical Data Backup",
+    "historicalBackupLink": "https://www.bitacora.io/help/data-version-control-system?lang=en"
+  },
+  "createReports": {
+    "title": "Create Reports",
+    "exportToExcel": "Export to Excel",
+    "setNameAndLogo": "Set Name & Logos",
+    "createPdfWithPhotos": "Create PDF with Photos",
+    "createPdfWithPhotosLink": "https://www.bitacora.io/ayuda/plantillas-de-reportes?lang=en"
+  },
+  "addUsers": {
+    "title": "Add Users",
+    "addCollaborators": "Add Collaborators",
+    "setRoles": "Set Roles",
+    "setRolesLink": "https://www.bitacora.io/help/add-users-and-set-roles?lang=en"
+  },
+  "superviseAndMonitoring": {
+    "title": "Supervise & Monitor",
+    "viewActivityMap": "View Activity Map",
+    "advancedSearch": "Perform Advanced Search",
+    "createNotifications": "Create Notifications & Alerts"
+  }
+}

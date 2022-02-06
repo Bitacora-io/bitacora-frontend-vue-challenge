@@ -1,0 +1,13 @@
+.o-account-submenu {
+  .el-menu-item.o-account-submenu__item-account {
+    line-height: 1.2em;
+    height: 3rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__email {
+    margin: 0;
+    font-size: 1em;
+  }
+}

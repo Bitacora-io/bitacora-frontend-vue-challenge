@@ -1,0 +1,69 @@
+{
+  "name": "bitacora-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "husky install",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:ui:dev": "cypress open",
+    "test:ui:run": "cypress run",
+    "config:lint": "husky install",
+    "lint": "vue-cli-service lint"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,vue}": [
+      "vue-cli-service lint --no-fix --max-warnings 0 --max-errors 0"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^0.2.6",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@tailwindcss/forms": "^0.3.2",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "element-plus": "1.3.0-beta.10",
+    "font-awesome": "^4.7.0",
+    "inuitcss": "^6.0.0",
+    "memoize-one": "^5.2.1",
+    "sass": "^1.36.0",
+    "vue": "^3.2.4",
+    "vue-i18n": "^9.1.4",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@tailwindcss/postcss7-compat": "npm:@tailwindcss/postcss7-compat@^2.1.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "cypress": "^7.2.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.16.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.1.2",
+    "node-sass": "^4.12.0",
+    "postcss": "^7.0.35",
+    "prettier": "^2.2.1",
+    "sass-loader": "^8.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0",
+    "vue-jest": "^5.0.0-0"
+  }
+}

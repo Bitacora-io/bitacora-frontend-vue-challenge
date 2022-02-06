@@ -1,0 +1,39 @@
+/* ==========================================================================
+  #FORM-LAYOUT
+========================================================================== */
+
+.o-form-layout {
+  width: 100%;
+  // margin-left: -$inuit-global-spacing-unit;
+
+  &__item {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    // padding-left: $inuit-global-spacing-unit;
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: $color-gray-variant4;
+    @include inuit-font-size(14px);
+  }
+
+  &__input {
+    display: block;
+  }
+
+  &--horizontal {
+    margin-left: -15px;
+
+    .o-form-layout__item {
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+}

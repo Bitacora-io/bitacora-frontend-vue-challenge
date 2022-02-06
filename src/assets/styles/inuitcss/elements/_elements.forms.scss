@@ -1,0 +1,84 @@
+/* ==========================================================================
+  #FORMS
+  ========================================================================== */
+
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+input[type="text"],
+input[type="password"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="number"],
+textarea,
+select {
+  display: block;
+  border: 1px solid #e5e6e7;
+  padding: 6px 12px;
+  width: 100%;
+  background-color: #fff;
+  color: $color-gray-variant3;
+
+  @include font-size(16px);
+  @include vendor(border-radius, 3px);
+  @include vendor(appearance, none);
+  @include vendor(box-sizing, border-box);
+  @include vendor(
+    transition,
+    border-color 0.15s ease-in-out 0s,
+    box-shadow 0.15s ease-in-out 0s
+  );
+
+  &:focus,
+  &:active {
+    outline: 0;
+    --tw-ring-color: $color-green-variant1;
+    border-color: var(--tw-ring-color);
+    box-shadow: inherit;
+  }
+}
+
+select {
+  background-image: url(/img/zondicons/cheveron-down.svg);
+  background-position: 98% center;
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="submit"] {
+  &:focus,
+  &:active {
+    outline: 0;
+  }
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: $color-gray-variant2;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: $color-gray-variant2;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: $color-gray-variant2;
+  opacity: 1;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: $color-gray-variant2;
+  opacity: 1;
+}

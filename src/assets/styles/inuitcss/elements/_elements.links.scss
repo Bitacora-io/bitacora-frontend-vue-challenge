@@ -1,0 +1,5 @@
+a {
+  @include attention() {
+    transition: all 100ms linear;
+  }
+}

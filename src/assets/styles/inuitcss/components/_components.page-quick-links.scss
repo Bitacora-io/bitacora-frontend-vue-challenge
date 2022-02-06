@@ -1,0 +1,39 @@
+.c-quick-links {
+  @apply tw-mx-4;
+  @apply tw-px-4;
+
+  background: $color-blue-variant1;
+
+  &--subtitle__icon {
+    @apply tw-text-base;
+  }
+  &--subtitle__text {
+    @apply tw-text-sm;
+    @apply tw-mb-3;
+    @apply tw-ml-0.5;
+  }
+  &--subtitle__icon,
+  &--subtitle__text {
+    @apply tw-text-yellow-300;
+    @apply tw-font-bold;
+  }
+  &--link:hover {
+    @apply tw-underline;
+  }
+
+  .el-collapse-item__header,
+  .el-collapse-item__wrap,
+  .el-collapse-item:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .el-collapse-item__header {
+    @apply tw-text-base;
+  }
+  .el-collapse-item__header,
+  .el-collapse-item__content {
+    @apply tw-text-white;
+    background: $color-blue-variant1;
+  }
+}

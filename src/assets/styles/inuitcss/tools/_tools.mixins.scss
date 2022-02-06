@@ -1,0 +1,77 @@
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+// Spit out vendor prefixes in one go. Very pragmatic, far from perfect.
+@mixin vendor($property, $value...) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  #{$property}: $value;
+}
+
+// Apply ‘attention’ styles in one go.
+@mixin attention($self: false) {
+  @if ($self != false) {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+// Generate Maven Pro numbered font-weights from their aliases.
+@mixin font-weight($font-weight) {
+  @if ($font-weight == "normal") {
+    font-weight: 400;
+  }
+
+  @if ($font-weight == "medium") {
+    font-weight: 500;
+  }
+
+  @if ($font-weight == "bold") {
+    font-weight: 700;
+  }
+
+  @if ($font-weight == "ultra-bold") {
+    font-weight: 900;
+  }
+}
+
+// Create all specified heading styles in one go.
+@mixin headings($from: 1, $to: 6) {
+  %base-heading {
+    @content;
+  }
+
+  @if $from >= 1 and $to <= 6 {
+    @for $i from $from through $to {
+      h#{$i} {
+        @extend %base-heading;
+      }
+    }
+  }
+}
+
+@mixin hide-text() {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin remove-select() {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

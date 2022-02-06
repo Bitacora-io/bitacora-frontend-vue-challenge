@@ -1,0 +1,112 @@
+@import 'inuitcss/settings/settings.colors';
+
+.el-dialog__body {
+  padding: calc(var(--el-dialog-padding-primary)) var(--el-dialog-padding-primary);
+}
+
+.el-button:focus,
+.el-button:active,
+.el-button:hover,
+.el-button {
+  @apply tw-outline-none;
+}
+
+.el-tag.el-tag--info {
+  color: $color-gray-variant3;
+}
+
+.el-loading-spinner .circular {
+  display: inline-block;
+}
+
+.el-date-editor .el-range-separator {
+  width: auto;
+}
+
+.el-date-editor--daterange.el-input,
+.el-date-editor--daterange.el-input__inner,
+.el-date-editor--timerange.el-input,
+.el-date-editor--timerange.el-input__inner {
+  width: 100%;
+}
+
+.el-table__header,
+.el-table__body {
+  margin-bottom: 0;
+}
+
+.el-table .cell {
+  word-break: break-word;
+}
+
+.el-table th > .cell {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.el-table th,
+.el-table td {
+  padding: 0.5rem 0;
+}
+
+.el-table__empty-text {
+  line-height: inherit;
+}
+
+.el-pagination {
+  color: $color-gray-variant3;
+}
+
+.el-select .el-select__tags input,
+.el-select .el-select__tags input:active,
+.el-select .el-select__tags input:focus {
+  margin: 0;
+  outline: 0;
+  border: 0 solid transparent;
+  background-color: transparent;
+}
+
+.el-select .el-select__tags .el-tag.is-hit {
+  border: none;
+}
+
+.el-picker-panel *[slot=sidebar],
+.el-picker-panel__sidebar {
+  width: 120px;
+}
+
+.el-form--label-top .el-form-item__label {
+  @apply tw-pb-2;
+  @apply tw-leading-none;
+  @apply tw-font-medium;
+}
+
+.el-dropdown-menu__item--divided:before {
+  height: auto;
+  margin: inherit;
+}
+
+.el-icon svg {
+  display: inline;
+  vertical-align: baseline;
+}
+
+/*
+  Adjusts the Total sum from data tables
+  like Stock Report's Filter by project
+*/
+.el-table__footer td:nth-child(1) div {
+  padding-right: 0;
+}
+
+.el-card {
+  --el-card-padding: 14px;
+}
+
+.el-main {
+  --el-main-padding: 0.5rem;
+}
+
+.el-pagination {
+  display: inline-flex;
+}

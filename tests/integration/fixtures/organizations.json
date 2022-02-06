@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1,
+    "owner_id": 1,
+    "owner_name": "alan",
+    "name": "Greatest company ever",
+    "pro_status": 1,
+    "active_plan": "ADVANCED_TRIAL",
+    "logo": "",
+    "is_personal_org": true,
+    "is_active_for_user": true,
+    "total_users": 1,
+    "total_projects": 0,
+    "s3_token": {
+      "access_key_id": "abc",
+      "secret_access_key": "asdasd+asdasdd",
+      "session_token": "very-jon",
+      "expiration": 1619549379
+    }
+  }
+]

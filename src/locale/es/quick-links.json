@@ -1,0 +1,33 @@
+{
+  "title": "Accesos rapidos",
+  "regards": {
+    "hello": "Hola!",
+    "instruction": "Aqui hay algunos accesos rapidos a funcionalidades importantes que debes probar."
+  },
+  "information": {
+    "title": "Tu informacion",
+    "createLog": "Crea una bitacora o tarea",
+    "viewInfo": "Ve tu Información",
+    "historicalBackup": "Respaldo Histórico de Datos",
+    "historicalBackupLink": "https://www.bitacora.io/help/data-version-control-system?lang=es"
+  },
+  "createReports": {
+    "title": "Crea Reportes",
+    "exportToExcel": "Exporta a Excel",
+    "setNameAndLogo": "Ajusta Nombre y Logos",
+    "createPdfWithPhotos": "Genera PDF con Fotos",
+    "createPdfWithPhotosLink": "https://www.bitacora.io/ayuda/plantillas-de-reportes?lang=es"
+  },
+  "addUsers": {
+    "title": "Suma Usuarios",
+    "addCollaborators": "Añade Colaboradores",
+    "setRoles": "Define Roles",
+    "setRolesLink": "https://www.bitacora.io/ayuda/anadir-usuarios-y-roles?lang=es"
+  },
+  "superviseAndMonitoring": {
+    "title": "Monitoreo y Supervisa",
+    "viewActivityMap": "Ve Mapa de Actividad",
+    "advancedSearch": "Realiza Búsqueda Avanzada",
+    "createNotifications": "Crea Notificaciones y Alertas"
+  }
+}

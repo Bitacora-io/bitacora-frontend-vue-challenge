@@ -1,0 +1,91 @@
+.c-side-nav {
+  background: $color-blue-variant1;
+  height: 100%;
+  overflow: auto;
+
+  $bg-menu: $color-blue-variant1;
+
+  .el-menu,
+  &__menu {
+    background: $bg-menu;
+    border-right: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #a7b1c2;
+  }
+
+  &__logo {
+    margin: 1rem 1.3rem;
+    width: auto;
+    height: 4rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+
+    @include mq($until: tablet) {
+      margin: 0.8rem;
+      height: 3rem;
+      background-image: url(../../bitacora-isotype-white.svg) !important;
+      background-size: 100%;
+    }
+  }
+
+  &__group {
+    color: #fff;
+  }
+
+  &__group-title {
+    margin-top: 1rem;
+
+    @include mq($until: tablet) {
+      @include hide-text();
+      border-top: 1px solid $color-gray-variant2;
+      margin-top: 0;
+      height: 0;
+    }
+  }
+
+  .el-menu-item,
+  .el-sub-menu__title {
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .el-menu-item:hover,
+  .el-menu-item:focus,
+  .el-sub-menu__title:hover,
+  .el-sub-menu__title:focus {
+    background-color: darken($color: $bg-menu, $amount: 3);
+  }
+
+  .el-menu-item,
+  .el-sub-menu__title {
+    color: #a7b1c2;
+  }
+
+  .el-sub-menu .el-menu-item {
+    font-size: 0.75em;
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
+
+  .el-sub-menu .el-menu-item:hover {
+    color: #fff;
+  }
+
+  .el-sub-menu.is-opened {
+    border-left: 4px solid $color-green-variant1;
+  }
+
+  .el-menu-item.is-active,
+  .el-sub-menu.el-sub-menu.is-opened .el-sub-menu__title {
+    color: #fff;
+  }
+
+  .el-sub-menu.is-opened,
+  .el-sub-menu.is-opened > .el-menu {
+    background-color: darken($color: $bg-menu, $amount: 3);
+  }
+}

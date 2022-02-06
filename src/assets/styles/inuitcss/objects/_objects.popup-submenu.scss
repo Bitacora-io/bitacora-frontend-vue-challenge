@@ -1,0 +1,12 @@
+.o-popup-submenu {
+  &__separator {
+    display: block;
+    height: 1px;
+    background-color: lighten($color: $color-gray-variant2, $amount: 35);
+  }
+
+  &--item-huge {
+    height: 3.5rem !important;
+    line-height: 3.5rem !important;
+  }
+}

@@ -1,0 +1,11 @@
+/*------------------------------------*\
+    #ALIASES
+\*------------------------------------*/
+
+$spacing-unit: $inuit-global-spacing-unit;
+$spacing-unit--small: $inuit-global-spacing-unit-small;
+$spacing-unit--large: $inuit-global-spacing-unit-large;
+
+@mixin font-size($args...) {
+  @include inuit-font-size($args...);
+}

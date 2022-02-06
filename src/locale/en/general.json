@@ -1,0 +1,100 @@
+{
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "signUpError": "Something wrong happened, please try again!",
+  "welcome": "Welcome!",
+  "forgotPassword": "Forgot Password?",
+  "changePassword": "Change password",
+  "sendEmail": "Send email",
+  "currency": {
+    "style": "currency",
+    "currency": "USD"
+  },
+  "nav": {
+    "panel": "Panel",
+    "createLog": "Create Log",
+    "logs": {
+      "menu": "Logs",
+      "smartView": "Smart View",
+      "activity": "Activity"
+    },
+    "stock": {
+      "menu": "Stock",
+      "smartView": "Smart View",
+      "activity": "Activity",
+      "reports": "Reports"
+    },
+    "personnel": {
+      "menu": "Personnel",
+      "smartView": "Smart View",
+      "activity": "Activity",
+      "reports": "Reports"
+    },
+    "notifications": "Notifications",
+    "manage": {
+      "staff": "Staff"
+    },
+    "catalogs": {
+      "menu": "Catalog Management",
+      "projects": "Projects / Categories",
+      "subcategories": "Sub-Categories",
+      "items": "Inventory Items",
+      "providers": "Providers / Recipients",
+      "tags": "Tags"
+    },
+    "organizations": "Organizations"
+  },
+  "inputs": {
+    "email": "Email",
+    "name": "Name",
+    "password": "Password"
+  },
+  "validations": {
+    "fieldRequired": "This field is required",
+    "emailRequired": "Your email is required",
+    "emailValid": "Enter a valid email",
+    "nameRequired": "Enter your name",
+    "passwordRequired": "Your password is required",
+    "passwordMinLength": "Your password must be at least 5 characters",
+    "passwordMatch": "The passwords doesn’t match"
+  },
+  "goPro": "Add collaborators, upload photos/files and activate all features",
+  "plans": {
+    "free": "Free",
+    "pro": "Pro",
+    "advanced": "Advanced"
+  },
+  "badges": {
+    "upgradePlan": "Mejorar Plan"
+  },
+  "creationDate": "Creation Date",
+  "edit": "Edit",
+  "delete": "Delete",
+  "project": "Project / Category",
+  "dates": "Dates",
+  "advancedSearch": "Advanced Search",
+  "signatureTypes": {
+    "approved": "Approved",
+    "received": "Received",
+    "rejected": "Rejected"
+  },
+  "close": "Close",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "apply": "Apply",
+  "save": "Save",
+  "saving": "Saving",
+  "editOrganizations": "Edit Organizations",
+  "genericError": "Something went wrong, try again",
+  "selectOptions": "Select Options",
+  "examplesButton": "Examples / Guides",
+  "loading": "Loading",
+  "loadingXlsTitle": "Making File",
+  "longerLoadingStep1": "Please wait, this process may take longer",
+  "longerLoadingStep2": "Processing { progress } of { total } records",
+  "addTag": "Add Tag",
+  "messages": {
+    "saveSuccess": "Saved Successfully",
+    "error": "Something went wrong, please try again"
+  }
+}
