@@ -59,6 +59,14 @@ const routes = [
       auth: true,
     },
   },
+  {
+    path: "/logs/activity",
+    name: "logs.activity",
+    component: () => import("@/views/logs/Activity.vue"),
+    meta: {
+      auth: true,
+    },
+  },
 ];
 
 const router = createRouter({
