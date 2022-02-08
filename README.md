@@ -2,6 +2,11 @@
 
 ## Project setup
 
+The project needs to use **Node v14** to install the dependencies thus make sure it is install on your system before continuing
+
+MacOS or Linux: [nvm](https://github.com/nvm-sh/nvm)
+Windows: [fnm](https://github.com/Schniz/fnm)
+
 ```
 yarn install
 ```
