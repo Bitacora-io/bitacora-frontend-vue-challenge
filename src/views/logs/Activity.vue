@@ -105,7 +105,7 @@ export default {
     };
   },
   computed: {
-    ...mapState("worklogs", {
+    ...mapState("worklog", {
       records: "worklogs",
       recordsCount: "worklogsCount",
       recordsLoading: "loading",
@@ -115,7 +115,7 @@ export default {
     this.getWorklogs();
   },
   methods: {
-    ...mapActions("worklogs", { getWorklogs: "all" }),
+    ...mapActions("worklog", { getWorklogs: "all" }),
     handleCurrentChange(page_num) {
       this.getWorklogs({ page_num });
     },

@@ -1,4 +1,4 @@
-import WorklogsProxy from "@/proxies/WorklogsProxy";
+import WorklogProxy from "@/proxies/WorklogProxy";
 import WorklogTransformer from "@/transformers/WorklogTransformer";
 
 const MutationTypes = {
@@ -22,7 +22,7 @@ const organizationId = localStorage.getItem("organization");
 const actions = {
   all({ commit }, payload = {}) {
     commit(MutationTypes.LOADING, true);
-    new WorklogsProxy({ organization_id: organizationId, ...payload })
+    new WorklogProxy({ organization_id: organizationId, ...payload })
       .all()
       .then(({ worklogs, worklogs_count }) => {
         commit(MutationTypes.ALL, {

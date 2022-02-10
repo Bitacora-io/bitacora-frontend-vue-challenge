@@ -1,6 +1,6 @@
 import BaseProxy from "./BaseProxy";
 
-class WorklogsProxy extends BaseProxy {
+class WorklogProxy extends BaseProxy {
   /**
    * The constructor for the AuthProxy.
    *
@@ -11,4 +11,4 @@ class WorklogsProxy extends BaseProxy {
   }
 }
 
-export default WorklogsProxy;
+export default WorklogProxy;
