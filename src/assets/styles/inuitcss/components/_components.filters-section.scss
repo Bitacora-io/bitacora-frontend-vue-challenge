@@ -1,0 +1,11 @@
+.c-filters-section {
+  @apply tw-flex;
+  @apply tw-justify-between;
+  @apply tw-items-center;
+
+  &__item {
+    @apply tw-flex;
+    @apply tw-flex-row;
+    @apply tw-items-center;
+  }
+}
