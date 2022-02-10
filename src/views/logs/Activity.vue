@@ -54,10 +54,12 @@
         </el-table>
         <div class="tw-flex tw-justify-end tw-py-3 tw-px-4">
           <el-pagination
+            v-model:currentPage="currentPage"
             :page-size="10"
             :pager-count="8"
             layout="prev, pager, next"
             :total="recordsCount"
+            @current-change="handleCurrentChange"
           >
           </el-pagination>
         </div>
@@ -79,6 +81,7 @@ export default {
   },
   data() {
     return {
+      currentPage: 1,
       breadcrumbLinks: [
         {
           name: this.$i18n.t("general.nav.panel"),
@@ -108,6 +111,9 @@ export default {
   },
   methods: {
     ...mapActions("worklogs", { getWorklogs: "all" }),
+    handleCurrentChange(page_num) {
+      this.getWorklogs({ page_num });
+    },
   },
 };
 </script>
