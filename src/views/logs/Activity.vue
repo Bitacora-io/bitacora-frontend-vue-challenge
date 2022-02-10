@@ -7,7 +7,12 @@
     <!-- <activity-table :columns="" extension-type="Worklogs"></activity-table> -->
     <section class="tw-p-4 tw-bg-gray-100">
       <div class="tw-bg-white">
-        <el-table :data="records" style="width: 100%" stripe>
+        <el-table
+          :data="records"
+          style="width: 100%"
+          stripe
+          v-loading="recordsLoading"
+        >
           <el-table-column type="expand">
             <template #default="props">
               <div class="tw-max-w-sm">
