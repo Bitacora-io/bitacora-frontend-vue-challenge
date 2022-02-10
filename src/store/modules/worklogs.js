@@ -20,9 +20,9 @@ const organizationId = localStorage.getItem("organization");
 
 // Actions
 const actions = {
-  all({ commit }) {
+  all({ commit }, payload = {}) {
     commit(MutationTypes.LOADING, true);
-    new WorklogsProxy({ organizationId })
+    new WorklogsProxy({ organization_id: organizationId, ...payload })
       .all()
       .then(({ worklogs, worklogs_count }) => {
         commit(MutationTypes.ALL, {
