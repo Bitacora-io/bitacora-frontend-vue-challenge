@@ -11,6 +11,7 @@ import quickLinks from "./quick-links.json";
 import forgotPassword from "./forgot-password.json";
 import resetPassword from "./reset-password.json";
 import worklogs from "./worklogs.json";
+import advancedSearch from "./advanced-search.json";
 
 export default {
   auth,
@@ -19,4 +20,5 @@ export default {
   forgotPassword,
   resetPassword,
   worklogs,
+  advancedSearch,
 };
