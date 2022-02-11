@@ -9,57 +9,6 @@
     <el-table-column type="expand">
       <template #default="{ row: activity }">
         <component :is="summary" :activity="activity" />
-
-        <!-- <dl class="c-summary tw-max-w-xl">
-          <div class="c-summary__block">
-            <dt class="c-summary__title">Comments:</dt>
-            <dd class="c-summary__content">
-              {{ row.comment }}
-            </dd>
-          </div>
-          <div class="c-summary__block">
-            <dt class="c-summary__title">Progress comments:</dt>
-            <dd class="c-summary__content">
-              {{ row.progressEntryComments }}
-            </dd>
-          </div>
-          <div class="c-summary__block">
-            <dt class="c-summary__title">Expenses:</dt>
-            <dd class="c-summary__content">
-              {{ row.cost }}
-            </dd>
-          </div>
-          <div class="c-summary__block">
-            <dt class="c-summary__title">Income:</dt>
-            <dd class="c-summary__content">
-              {{ row.value }}
-            </dd>
-          </div>
-          <div class="c-summary__block">
-            <dt class="c-summary__title">Status:</dt>
-            <dd class="c-summary__content">
-              {{ row.status }}
-            </dd>
-          </div>
-          <div class="c-summary__block">
-            <dt class="c-summary__title">Start date:</dt>
-            <dd class="c-summary__content">
-              {{ row.startDate }}
-            </dd>
-          </div>
-          <div class="c-summary__block">
-            <dt class="c-summary__title">End date:</dt>
-            <dd class="c-summary__content">
-              {{ row.endDate }}
-            </dd>
-          </div>
-          <div class="c-summary__block">
-            <dt class="c-summary__title">Creation Date:</dt>
-            <dd class="c-summary__content">
-              {{ row.createdAt }}
-            </dd>
-          </div>
-        </dl> -->
       </template>
     </el-table-column>
     <el-table-column
