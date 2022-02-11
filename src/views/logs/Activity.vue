@@ -27,7 +27,10 @@
           </div>
         </div>
       </div>
-      <activity-table :columns="[]" extension-type="Worklogs"></activity-table>
+      <activity-table
+        :columns="columns"
+        extension-type="Worklogs"
+      ></activity-table>
     </div>
   </panel-layout>
 </template>
@@ -36,7 +39,6 @@
 import PanelLayout from "@/layouts/Panel.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
 import ProjectsDropdown from "@/components/ProjectsDropdown.vue";
-import { mapActions, mapState } from "vuex";
 import DateRangePicker from "@/components/DateRangePicker.vue";
 import ActivityTable from "@/components/ActivityTable.vue";
 
@@ -51,7 +53,6 @@ export default {
   },
   data() {
     return {
-      currentPage: 1,
       breadcrumbLinks: [
         {
           name: this.$i18n.t("general.nav.panel"),
@@ -66,40 +67,25 @@ export default {
           routeName: "logs.activity",
         },
       ],
-      // columns: [
-      //   {
-      //     name: "theme",
-      //     width: 120,
-      //     label: "Title"
-      //   },
-      //   {
-      //     name: "theme",
-      //     width: 120,
-      //     label: "Title"
-      //   },
-      //   {
-      //     name: "theme",
-      //     width: 120,
-      //     label: "Title"
-      //   },
-      // ],
+      columns: [
+        { label: "Date", width: 120, sortable: true, name: "date" },
+        { label: "Progress", width: 120, sortable: true, name: "progress" },
+        { label: "Progress", width: 120, sortable: true, name: "progress" },
+        { label: "Quantity", width: 100, sortable: true, name: "quantity" },
+        { label: "Title", name: "theme", sortable: true },
+        { label: "Project", name: "projectName", sortable: true },
+        {
+          label: "Sub-Loc",
+          width: 120,
+          name: "subLocationName",
+          sortable: true,
+        },
+        { label: "Cost", width: 120, name: "cost", sortable: true },
+        { label: "Provider", width: 120, name: "provider", sortable: true },
+        { label: "Assignee", width: 120, name: "assigneeName", sortable: true },
+        { label: "Creator", width: 120, name: "creatorName", sortable: true },
+      ],
     };
-  },
-  computed: {
-    ...mapState("worklog", {
-      records: "worklogs",
-      recordsCount: "worklogsCount",
-      recordsLoading: "loading",
-    }),
-  },
-  mounted() {
-    this.getWorklogs();
-  },
-  methods: {
-    ...mapActions("worklog", { getWorklogs: "all" }),
-    handleCurrentChange(page_num) {
-      this.getWorklogs({ page_num });
-    },
   },
 };
 </script>
