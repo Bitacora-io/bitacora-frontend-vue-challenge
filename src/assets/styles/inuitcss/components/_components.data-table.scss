@@ -1,0 +1,10 @@
+.c-datatable {
+  @apply tw-w-full;
+
+  &__footer {
+    @apply tw-flex;
+    @apply tw-justify-end;
+    @apply tw-py-3;
+    @apply tw-px-4;
+  }
+}

@@ -1,0 +1,21 @@
+.c-summary {
+  @apply tw-px-4;
+
+  &__block {
+    @apply sm:tw-grid;
+    @apply sm:tw-grid-cols-3;
+    @apply sm:tw-gap-4;
+  }
+  &__title {
+    @apply tw-text-sm;
+    @apply tw-font-bold;
+    @apply tw-text-gray-500;
+  }
+  &__content {
+    @apply tw-mt-1;
+    @apply tw-text-sm;
+    @apply tw-text-gray-900;
+    @apply sm:tw-mt-0;
+    @apply sm:tw-col-span-2;
+  }
+}
