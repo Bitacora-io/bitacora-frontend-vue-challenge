@@ -30,6 +30,7 @@
       <activity-table
         :columns="columns"
         extension-type="Worklogs"
+        :summary="summary"
       ></activity-table>
     </div>
   </panel-layout>
@@ -41,7 +42,7 @@ import Breadcrumb from "@/components/Breadcrumb.vue";
 import ProjectsDropdown from "@/components/ProjectsDropdown.vue";
 import DateRangePicker from "@/components/DateRangePicker.vue";
 import ActivityTable from "@/components/ActivityTable.vue";
-
+import SummaryData from "@/components/SummaryData.vue";
 export default {
   name: "Activity",
   components: {
@@ -71,6 +72,7 @@ export default {
         { label: "Date", width: 120, sortable: true, name: "date" },
         { label: "Progress", width: 120, sortable: true, name: "progress" },
         { label: "Progress", width: 120, sortable: true, name: "progress" },
+        { label: "Progress", width: 120, sortable: true, name: "progress" },
         { label: "Quantity", width: 100, sortable: true, name: "quantity" },
         { label: "Title", name: "theme", sortable: true },
         { label: "Project", name: "projectName", sortable: true },
@@ -85,6 +87,7 @@ export default {
         { label: "Assignee", width: 120, name: "assigneeName", sortable: true },
         { label: "Creator", width: 120, name: "creatorName", sortable: true },
       ],
+      summary: SummaryData,
     };
   },
 };

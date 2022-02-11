@@ -7,8 +7,10 @@
     v-loading="recordsLoading"
   >
     <el-table-column type="expand">
-      <template #default="{ row }">
-        <dl class="c-summary tw-max-w-xl">
+      <template #default="{ row: activity }">
+        <component :is="summary" :activity="activity" />
+
+        <!-- <dl class="c-summary tw-max-w-xl">
           <div class="c-summary__block">
             <dt class="c-summary__title">Comments:</dt>
             <dd class="c-summary__content">
@@ -57,7 +59,7 @@
               {{ row.createdAt }}
             </dd>
           </div>
-        </dl>
+        </dl> -->
       </template>
     </el-table-column>
     <el-table-column
@@ -112,6 +114,10 @@ export default {
     columns: {
       type: Array,
       required: true,
+    },
+    summary: {
+      type: [String, Object],
+      default: "div",
     },
     extensionType: {
       type: String,
