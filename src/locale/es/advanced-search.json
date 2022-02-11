@@ -1,11 +1,25 @@
 {
     "project": "Proyecto / Categoría:",
     "select": "Todos / Selecciona Opciones",
+    "options": "Selecciona opciones",
     "dates": "Fechas:",
     "rangeSeparator": "al",
     "title": "Búsqueda Avanzada",
     "removeFilter": "Eliminar filtros",
     "cancel": "Cancelar",
-    "apply": "Aplicar"
+    "apply": "Aplicar",
+    "t": "Título:",
+    "comments": "Comentarios:",
+    "placeholder": "Ingresa palabra o frase clave a buscar",
+    "subloc": "Sub-Loc:",
+    "provider": "Proveedor:",
+    "assignee": "Asignado:",
+    "signed": "Firmado:",
+    "signature": "Tipo de Firma:",
+    "signatureT1": "Aprobado",
+    "signatureT2": "Rechazado",
+    "signatureT3": "Recibido",
+    "creator": "Creador:",
+    "tag": "Tags:"
 }
   

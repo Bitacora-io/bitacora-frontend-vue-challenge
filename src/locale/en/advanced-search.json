@@ -1,11 +1,26 @@
 {
     "project": "Project / Category:",
     "select": "All / Select Options",
+    "options": "Select Options",
     "dates": "Dates:",
     "rangeSeparator": "to",
     "title": "Advanced Search",
     "removeFilter": "Remove Filters",
     "cancel": "Cancel",
-    "apply": "Apply"
+    "apply": "Apply",
+    "t": "Title:",
+    "comments": "Comments:",
+    "placeholder": "Enter exact keyword or phrase to search",
+    "subloc": "Sub-Loc:",
+    "provider": "Provider:",
+    "assignee": "Assignee:",
+    "signed": "Signed:",
+    "signature": "Signature Type:",
+    "signatureT1": "Approved",
+    "signatureT2": "Rejected",
+    "signatureT3": "Received",
+    "creator": "Creator:",
+    "tag": "Tags:"
+
 }
   
