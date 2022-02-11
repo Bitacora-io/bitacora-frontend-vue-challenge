@@ -1,9 +1,11 @@
 <template>
   <el-select
-    v-model="value1"
+    v-model="projects"
     multiple
     clearable
+    collapse-tags
     :placeholder="$t('advancedSearch.select')"
+    @change="selectedProject"
   >
     <el-option
       v-for="item in options"
@@ -18,13 +20,6 @@
 <script>
 import { mapState, mapActions } from "vuex";
 
-const now = new Date();
-const end = now.getTime();
-
-now.setDate(now.getDate() - 7);
-
-const start = now.getTime();
-
 export default {
   name: "ProjectsDropdown",
   computed: {
@@ -35,11 +30,15 @@ export default {
   data() {
     return {
       ...mapActions("project", ["all"]),
-      value1: [],
-      value2: "",
-      startDate: start,
-      finishDate: end,
+      projects: [],
     };
+  },
+  methods: {
+    selectedProject() {
+      const projects = { ...this.projects };
+
+      console.log(projects);
+    },
   },
   created() {
     this.all();

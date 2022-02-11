@@ -4,12 +4,19 @@ import WorklogTransformer from "@/transformers/WorklogTransformer";
 const MutationTypes = {
   ALL: "ALL",
   LOADING: "LOADING",
+  SUGGESTIONS: "SUGGESTIONS",
 };
 
 // Initial State
 const state = () => ({
   worklogs: [],
   worklogsCount: 0,
+  assignee: [],
+  author: [],
+  provider: [],
+  signees: [],
+  sublocation: [],
+  title: [],
   loading: false,
 });
 
@@ -35,6 +42,29 @@ const actions = {
       })
       .finally(() => commit(MutationTypes.LOADING, false));
   },
+  suggestions({ commit }) {
+    return new Promise((resolve, reject) => {
+      commit(MutationTypes.LOADING, true);
+      new WorklogProxy()
+        .suggestions(organizationId)
+        .then(({ assignee, author, provider, signees, sublocation, title }) => {
+          commit(MutationTypes.SUGGESTIONS, {
+            assignee,
+            author,
+            provider,
+            signees,
+            sublocation,
+            title,
+          });
+        })
+        .catch((error) => {
+          reject(error);
+        })
+        .finally(() => {
+          commit(MutationTypes.LOADING, false);
+        });
+    });
+  },
 };
 
 // Mutations
@@ -45,6 +75,17 @@ const mutations = {
   },
   [MutationTypes.LOADING](state, value) {
     state.loading = value;
+  },
+  [MutationTypes.SUGGESTIONS](
+    state,
+    { assignee, author, provider, signees, sublocation, title }
+  ) {
+    state.assignee = assignee;
+    state.author = author;
+    state.provider = provider;
+    state.signees = signees;
+    state.sublocation = sublocation;
+    state.title = title;
   },
 };
 

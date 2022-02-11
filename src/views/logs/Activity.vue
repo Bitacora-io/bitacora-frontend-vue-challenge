@@ -20,10 +20,7 @@
             <date-range-picker />
           </div>
           <div class="c-filters-section__item">
-            <el-button type="primary" @click="dialogFormVisible = true">
-              {{ $t("advancedSearch.title") }}
-              <el-icon class="tw-ml-1"><search /> </el-icon>
-            </el-button>
+            <advanced-search-dialog />
           </div>
         </div>
       </div>
@@ -43,6 +40,8 @@ import ProjectsDropdown from "@/components/ProjectsDropdown.vue";
 import DateRangePicker from "@/components/DateRangePicker.vue";
 import ActivityTable from "@/components/ActivityTable.vue";
 import SummaryData from "@/components/SummaryData.vue";
+import AdvancedSearchDialog from "@/components/advanced-search/AdvancedSearchDialog.vue";
+
 export default {
   name: "Activity",
   components: {
@@ -51,6 +50,7 @@ export default {
     ProjectsDropdown,
     DateRangePicker,
     ActivityTable,
+    AdvancedSearchDialog,
   },
   data() {
     return {
