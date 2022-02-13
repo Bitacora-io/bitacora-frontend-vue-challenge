@@ -5,25 +5,6 @@
     </breadcrumb>
 
     <div class="o-main-content">
-      <div class="tw-mb-4">
-        <div class="c-filters-section">
-          <div class="c-filters-section__item">
-            <label class="o-label tw-mr-1">
-              {{ $t("advancedSearch.project") }}
-            </label>
-            <projects-dropdown />
-          </div>
-          <div class="c-filters-section__item">
-            <label class="o-label tw-mr-1">
-              {{ $t("advancedSearch.dates") }}
-            </label>
-            <date-range-picker />
-          </div>
-          <div class="c-filters-section__item">
-            <advanced-search-dialog />
-          </div>
-        </div>
-      </div>
       <activity-table
         :columns="columns"
         extension-type="Worklogs"
@@ -36,21 +17,15 @@
 <script>
 import PanelLayout from "@/layouts/Panel.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
-import ProjectsDropdown from "@/components/ProjectsDropdown.vue";
-import DateRangePicker from "@/components/DateRangePicker.vue";
 import ActivityTable from "@/components/ActivityTable.vue";
 import SummaryData from "@/components/SummaryData.vue";
-import AdvancedSearchDialog from "@/components/advanced-search/AdvancedSearchDialog.vue";
 
 export default {
   name: "Activity",
   components: {
     PanelLayout,
     Breadcrumb,
-    ProjectsDropdown,
-    DateRangePicker,
     ActivityTable,
-    AdvancedSearchDialog,
   },
   data() {
     return {

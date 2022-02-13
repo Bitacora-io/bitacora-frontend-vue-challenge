@@ -5,20 +5,20 @@
  * The transformer for the assingee.
  */
 
-import BaseTransformer from "./BaseTransformer";
+import BaseTransformer from "../BaseTransformer";
 
-export default class ProjectTransformer extends BaseTransformer {
+export default class AssingeeTransformer extends BaseTransformer {
   /**
-   * Method used to transform a fetched project.
+   * Method used to transform a fetched assingee.
    *
-   * @param project The fetched project.
+   * @param assingee The fetched assingee.
    *
-   * @returns {Object} The transformed project.
+   * @returns {Object} The transformed assingee.
    */
   static fetch(assingee) {
     return {
-      id: null,
-      name: assingee[0],
+      id: assingee,
+      name: assingee,
     };
   }
 }
