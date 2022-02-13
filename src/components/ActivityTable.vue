@@ -1,4 +1,31 @@
 <template>
+  <div class="tw-mb-4">
+    <div class="c-filters-section" v-if="!appliedFilters">
+      <div class="c-filters-section__item">
+        <label class="o-label tw-mr-1">
+          {{ $t("advancedSearch.project") }}
+        </label>
+        <projects-dropdown />
+      </div>
+      <div class="c-filters-section__item">
+        <label class="o-label tw-mr-1">
+          {{ $t("advancedSearch.dates") }}
+        </label>
+        <date-range-picker />
+      </div>
+      <div class="c-filters-section__item">
+        <advanced-search-dialog
+          @filtersApplied="filtersApplied"
+          @removeFilters="removeFilters"
+        />
+      </div>
+    </div>
+    <advanced-search-descriptions
+      :advanced-filters="advancedFilters"
+      @remove-filters="removeFilters"
+      v-else
+    />
+  </div>
   <el-table
     :data="records"
     class="c-datatable"
@@ -50,6 +77,11 @@
 </template>
 
 <script>
+import ProjectsDropdown from "@/components/ProjectsDropdown.vue";
+import DateRangePicker from "@/components/DateRangePicker.vue";
+import AdvancedSearchDialog from "@/components/advanced-search/AdvancedSearchDialog.vue";
+import AdvancedSearchDescriptions from "@/components/advanced-search/AdvancedSearchDescriptions.vue";
+
 import { Edit, Clock, Check } from "@element-plus/icons-vue";
 import { mapActions, mapState } from "vuex";
 export default {
@@ -58,6 +90,10 @@ export default {
     Edit,
     Clock,
     Check,
+    ProjectsDropdown,
+    DateRangePicker,
+    AdvancedSearchDialog,
+    AdvancedSearchDescriptions,
   },
   props: {
     columns: {
@@ -77,6 +113,8 @@ export default {
     },
   },
   data: () => ({
+    appliedFilters: false,
+    advancedFilters: {},
     order: "",
   }),
   computed: {
@@ -95,6 +133,18 @@ export default {
     },
   },
   methods: {
+    openModal() {
+      console.log("Hola");
+      this.appliedFilters = true;
+    },
+    filtersApplied(advancedFiltersForm) {
+      this.appliedFilters = true;
+      this.advancedFilters = advancedFiltersForm;
+    },
+    removeFilters() {
+      this.appliedFilters = false;
+      this.advancedFilters = {};
+    },
     sortChange({ order: direction, prop }) {
       if (!direction) {
         this.order = "";

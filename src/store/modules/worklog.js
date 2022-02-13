@@ -1,5 +1,11 @@
 import WorklogProxy from "@/proxies/WorklogProxy";
 import WorklogTransformer from "@/transformers/WorklogTransformer";
+import AssigneeTransformer from "@/transformers/suggestions/AssigneeTransformer";
+import AuthorTransformer from "@/transformers/suggestions/AuthorTransformer";
+import ProviderTransformer from "@/transformers/suggestions/ProviderTransformer";
+import SigneeTransformer from "@/transformers/suggestions/SigneeTransformer";
+import SublocationTransformer from "@/transformers/suggestions/SublocationTransformer";
+import TitleTransformer from "@/transformers/suggestions/TitleTransformer";
 
 const MutationTypes = {
   ALL: "ALL",
@@ -49,12 +55,12 @@ const actions = {
         .suggestions(organizationId)
         .then(({ assignee, author, provider, signees, sublocation, title }) => {
           commit(MutationTypes.SUGGESTIONS, {
-            assignee,
-            author,
-            provider,
-            signees,
-            sublocation,
-            title,
+            assignee: AssigneeTransformer.fetchCollection(assignee),
+            author: AuthorTransformer.fetchCollection(author),
+            provider: ProviderTransformer.fetchCollection(provider),
+            signees: SigneeTransformer.fetchCollection(signees),
+            sublocation: SublocationTransformer.fetchCollection(sublocation),
+            title: TitleTransformer.fetchCollection(title),
           });
         })
         .catch((error) => {

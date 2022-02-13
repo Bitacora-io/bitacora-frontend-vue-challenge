@@ -23,7 +23,6 @@
           :range-separator="$t('advancedSearch.rangeSeparator')"
           start-placeholder="Start date"
           end-placeholder="End date"
-          :default-value="[start, end]"
         >
         </el-date-picker>
       </el-form-item>
@@ -35,21 +34,20 @@
           :placeholder="$t('advancedSearch.placeholder')"
         />
       </el-form-item>
-      <el-form-item prop="title" :label="$t('advancedSearch.comments')">
+      <el-form-item prop="comments" :label="$t('advancedSearch.comments')">
         <el-input
           class="tw-rounded tw-w-full"
           v-model="advancedFiltersForm.comments"
           :placeholder="$t('advancedSearch.placeholder')"
         />
       </el-form-item>
-      <el-form-item prop="title" :label="$t('advancedSearch.project')">
+      <el-form-item prop="projects" :label="$t('advancedSearch.project')">
         <el-select
           v-model="advancedFiltersForm.projects"
           multiple
           clearable
           collapse-tags
           :placeholder="$t('advancedSearch.select')"
-          @change="selectedProject"
           class="tw-w-full"
         >
           <el-option
@@ -68,14 +66,13 @@
           clearable
           collapse-tags
           :placeholder="$t('advancedSearch.select')"
-          @change="selectedProject"
           class="tw-w-full"
         >
           <el-option
-            v-for="item in sublocation"
-            :key="item"
-            :label="item"
-            :value="item"
+            v-for="item in sublocations"
+            :key="item.id"
+            :label="item.name"
+            :value="item.id"
           >
           </el-option>
         </el-select>
@@ -88,7 +85,6 @@
           clearable
           collapse-tags
           :placeholder="$t('advancedSearch.select')"
-          @change="selectedProject"
           class="tw-w-full"
         >
           <el-option
@@ -108,7 +104,6 @@
           clearable
           collapse-tags
           :placeholder="$t('advancedSearch.select')"
-          @change="selectedProject"
           class="tw-w-full"
         >
           <el-option
@@ -123,18 +118,17 @@
 
       <el-form-item prop="signed" :label="$t('advancedSearch.signed')">
         <el-select
-          v-model="advancedFiltersForm.signed"
+          v-model="advancedFiltersForm.signee"
           multiple
           clearable
           collapse-tags
           :placeholder="$t('advancedSearch.select')"
-          @change="selectedProject"
           class="tw-w-full"
         >
           <el-option
-            v-for="item in signee"
+            v-for="item in signees"
             :key="item.id"
-            :label="item.name"
+            :label="`${item.name} [${item.id}]`"
             :value="item.id"
           >
           </el-option>
@@ -155,11 +149,10 @@
           clearable
           collapse-tags
           :placeholder="$t('advancedSearch.select')"
-          @change="selectedProject"
           class="tw-w-full"
         >
           <el-option
-            v-for="item in author"
+            v-for="item in authors"
             :key="item.id"
             :label="item.name"
             :value="item.id"
@@ -175,7 +168,6 @@
           clearable
           collapse-tags
           :placeholder="$t('advancedSearch.options')"
-          @change="selectedProject"
           class="tw-w-full"
         >
           <el-option
@@ -190,7 +182,7 @@
     </el-form>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">{{
+        <el-button @click="removeFilters">{{
           $t("advancedSearch.removeFilter")
         }}</el-button>
         <el-button @click="dialogFormVisible = false">{{
@@ -218,29 +210,36 @@ const start = now.getTime();
 export default {
   name: "AdvancedSearchDialog",
   components: { Search },
+  emits: ["filtersApplied", "removeFilters"],
   computed: {
     ...mapState("project", {
       projects: "projects",
     }),
     ...mapState("worklog", {
-      assignee: "assignee",
-      author: "author",
-      provider: "provider",
+      assignees: "assignee",
+      authors: "author",
+      providers: "provider",
       signees: "signees",
-      sublocation: "sublocation",
-      title: "title",
+      sublocations: "sublocation",
+      titles: "title",
+    }),
+    ...mapState("tag", {
+      tags: "tags",
     }),
   },
   data() {
     return {
       ...mapActions("project", ["all"]),
       ...mapActions("worklog", ["suggestions"]),
+      ...mapActions("tag", {
+        allTags: "all",
+      }),
       dialogFormVisible: false,
       advancedFiltersForm: {
         dates: [start, end],
         title: "",
         comments: "",
-        project: [],
+        projects: [],
         subloc: [],
         provider: [],
         assignee: [],
@@ -257,15 +256,46 @@ export default {
         if (!valid) {
           return false;
         }
-        const advancedFiltersForm = { ...this.advancedFiltersForm };
+        let advancedFiltersForm = { ...this.advancedFiltersForm };
+        const dates = [...advancedFiltersForm.dates];
+        const title = advancedFiltersForm.title;
+        const comments = advancedFiltersForm.comments;
+        const projects = [...advancedFiltersForm.projects];
+        const subloc = [...advancedFiltersForm.subloc];
+        const provider = [...advancedFiltersForm.provider];
+        const assignee = [...advancedFiltersForm.assignee];
+        const signee = [...advancedFiltersForm.signee];
+        const signatures = [...advancedFiltersForm.signatures];
+        const creator = [...advancedFiltersForm.creator];
+        const tag = [...advancedFiltersForm.tag];
+        advancedFiltersForm = {
+          dates,
+          title,
+          comments,
+          projects,
+          subloc,
+          provider,
+          assignee,
+          signee,
+          signatures,
+          creator,
+          tag,
+        };
         this.dialogFormVisible = false;
-        console.log(advancedFiltersForm);
+
+        this.$emit("filtersApplied", advancedFiltersForm);
       });
+    },
+    removeFilters() {
+      this.dialogFormVisible = false;
+
+      this.$emit("removeFilters");
     },
   },
 
   created() {
     this.all();
+    this.allTags();
     this.suggestions();
   },
 };
